@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,7 +100,7 @@
             justify-content: center;
             font-size: 1.8em;
             color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .admin-column .column-icon {
@@ -125,7 +126,7 @@
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
             border: 2px solid #e2e8f0;
             transition: all 0.3s ease;
             position: relative;
@@ -134,7 +135,7 @@
 
         .flow-step:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
             border-color: #7c3aed;
         }
 
@@ -316,7 +317,7 @@
             padding: 15px 20px;
             font-weight: 600;
             color: #1e293b;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .org-arrow {
@@ -348,7 +349,7 @@
 
         .info-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
             border-color: #7c3aed;
         }
 
@@ -446,20 +447,56 @@
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .flow-step { animation: fadeInUp 0.5s ease backwards; }
-        .flow-step:nth-child(1) { animation-delay: 0.1s; }
-        .flow-step:nth-child(2) { animation-delay: 0.2s; }
-        .flow-step:nth-child(3) { animation-delay: 0.3s; }
-        .flow-step:nth-child(4) { animation-delay: 0.4s; }
-        .flow-step:nth-child(5) { animation-delay: 0.5s; }
-        .flow-step:nth-child(6) { animation-delay: 0.6s; }
-        .flow-step:nth-child(7) { animation-delay: 0.7s; }
-        .flow-step:nth-child(8) { animation-delay: 0.8s; }
-        .flow-step:nth-child(9) { animation-delay: 0.9s; }
+        .flow-step {
+            animation: fadeInUp 0.5s ease backwards;
+        }
+
+        .flow-step:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .flow-step:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .flow-step:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .flow-step:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .flow-step:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .flow-step:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .flow-step:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .flow-step:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .flow-step:nth-child(9) {
+            animation-delay: 0.9s;
+        }
 
         @media (max-width: 1400px) {
             .workflow-container {
@@ -468,44 +505,43 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>📋 E-Daftar Organization Management Workflow</h1>
-            <p>Person self-registers as Staff → Admin creates User, assigns role, department & permissions</p>
+            <p>Personal account (self-register via CNIC) → Official account (Admin assigns username, role, permissions)
+            </p>
             <p class="subtitle">Based on edaftar-frontend & edaftar-backend Admin Module</p>
         </div>
 
         <div class="workflow-container">
-            <!-- STAFF COLUMN (First - Person Self-Registers) -->
+            <!-- PERSONAL ACCOUNT COLUMN -->
             <div class="column staff-column">
                 <div class="column-header">
                     <div class="column-icon">👤</div>
-                    <div class="column-title">1. Person Registers as Staff <span class="api-badge">Self-Service</span></div>
+                    <div class="column-title">1. Personal Account <span class="api-badge">Self-Registration</span></div>
                 </div>
 
                 <div class="flow-step start-step">
                     <div class="step-number">1</div>
-                    <div class="step-title">Person Self-Registers as Staff</div>
-                    <div class="step-description">Individual registers themselves with personal information and sets credentials (username, password) at the time of registration. Staff record created in system.</div>
+                    <div class="step-title">Register with CNIC</div>
+                    <div class="step-description">User registers themselves using their CNIC. A personal account is
+                        created for managing their own information.</div>
                     <div class="expandable">
-                        <div class="expandable-header">📋 Required Information</div>
+                        <div class="expandable-header">📋 Registration</div>
                         <div class="expandable-content">
                             <div class="permission-item">
                                 <div class="permission-icon"></div>
-                                <span>CNIC (unique), fullName, guardianName</span>
+                                <span>CNIC (unique identifier)</span>
                             </div>
                             <div class="permission-item">
                                 <div class="permission-icon"></div>
-                                <span>Email, phone, gender, caste, grade, dob</span>
+                                <span>Personal details: name, email, phone, etc.</span>
                             </div>
                             <div class="permission-item">
                                 <div class="permission-icon"></div>
-                                <span>Username, password (credentials set at registration)</span>
-                            </div>
-                            <div class="permission-item">
-                                <div class="permission-icon"></div>
-                                <span>Optional: photo, fingerprintId, faceId</span>
+                                <span>Credentials for personal account access</span>
                             </div>
                         </div>
                     </div>
@@ -519,32 +555,36 @@
 
                 <div class="flow-step">
                     <div class="step-number">2</div>
-                    <div class="step-title">Staff Record Created</div>
-                    <div class="step-description">Staff exists in system with credentials. Status: Pending — awaiting Admin to create User account and assign role, department. No login access until Admin completes setup.</div>
+                    <div class="step-title">Personal Account Created</div>
+                    <div class="step-description">User receives a personal account. Can login and update their own
+                        information (profile, contact details). No official work access yet.</div>
                     <div class="step-tags">
-                        <span class="tag tag-warning">Pending Admin</span>
-                    </div>
-                </div>
-
-                <div class="flow-arrow" title="Admin creates User, assigns role, department, permissions">↓<br><span style="font-size:0.75em;color:#64748b;">(Admin creates User)</span></div>
-
-                <div class="flow-step">
-                    <div class="step-number">3</div>
-                    <div class="step-title">First Login</div>
-                    <div class="step-description">Login with credentials set at registration. JWT sign-in via /auth/login.</div>
-                    <div class="step-tags">
-                        <span class="tag">JWT Auth</span>
+                        <span class="tag">Profile Management</span>
                     </div>
                 </div>
 
                 <div class="flow-arrow">↓</div>
 
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Update Personal Information</div>
+                    <div class="step-description">User can view and edit their personal details in the personal account
+                        at any time.</div>
+                    <div class="step-tags">
+                        <span class="tag tag-cyan">Self-Service</span>
+                    </div>
+                </div>
+
+                <div class="flow-arrow" title="Admin creates official account">↓<br><span
+                        style="font-size:0.75em;color:#64748b;">(Admin grants official account)</span></div>
+
                 <div class="flow-step end-step">
                     <div class="step-number">4</div>
-                    <div class="step-title">Active E-Daftar Usage</div>
-                    <div class="step-description">Access e-File, e-Dak, Correspondence, Draft, Tasks, Meetings, Service Management — based on assigned role & permissions.</div>
+                    <div class="step-title">Access Official Work</div>
+                    <div class="step-description">After Admin creates official account with username, role & permissions
+                        — user performs official work (e-File, e-Dak, Correspondence, etc.).</div>
                     <div class="step-tags">
-                        <span class="tag tag-success">Fully Operational</span>
+                        <span class="tag tag-success">Official Account</span>
                     </div>
                 </div>
             </div>
@@ -553,13 +593,13 @@
             <div class="column admin-column">
                 <div class="column-header">
                     <div class="column-icon">👨‍💼</div>
-                    <div class="column-title">2. Admin Creates User & Assigns Access <span class="api-badge">/admin</span></div>
+                    <div class="column-title">2. Official Account <span class="api-badge">Admin Creates</span></div>
                 </div>
 
                 <div class="flow-step">
                     <div class="step-number">1</div>
                     <div class="step-title">Admin Authentication</div>
-                    <div class="step-description">Admin logs in with JWT. ProtectedRoute checks CASL (create/read/update on User, Role, Permission, OrganizationalUnit).</div>
+                    <div class="step-description">Admin logs in with JWT. ProtectedRoute checks CASL permissions.</div>
                     <div class="step-tags">
                         <span class="tag">JWT + PermissionsGuard</span>
                     </div>
@@ -570,7 +610,7 @@
                 <div class="flow-step">
                     <div class="step-number">2</div>
                     <div class="step-title">Setup Organization (if needed)</div>
-                    <div class="step-description">Create Department → Wing → Section hierarchy. Required before assigning users to departments.</div>
+                    <div class="step-description">Create Department → Wing → Section hierarchy.</div>
                     <div class="step-tags">
                         <span class="tag tag-primary">/admin/departments, wings, sections</span>
                     </div>
@@ -580,8 +620,9 @@
 
                 <div class="flow-step">
                     <div class="step-number">3</div>
-                    <div class="step-title">Select Registered Staff</div>
-                    <div class="step-description">Admin views list of Staff (self-registered). Selects Staff to create User account for. Uses staffId to link.</div>
+                    <div class="step-title">Select Registered User</div>
+                    <div class="step-description">Admin views list of users with personal accounts (registered via
+                        CNIC). Selects one to grant official account.</div>
                     <div class="step-tags">
                         <span class="tag">/staff (GET)</span>
                     </div>
@@ -589,29 +630,13 @@
 
                 <div class="flow-arrow">↓</div>
 
-                <div class="flow-step highlight-step">
+                <div class="flow-step">
                     <div class="step-number">4</div>
-                    <div class="step-title">Create User Account</div>
-                    <div class="step-description">Create User linked to selected Staff. Set username, officeEmail, designation. Assign departmentId, roleId, supervisorId.</div>
-                    <div class="expandable">
-                        <div class="expandable-header">📋 User Fields</div>
-                        <div class="expandable-content">
-                            <div class="permission-item">
-                                <div class="permission-icon"></div>
-                                <span>username, officeEmail, designation</span>
-                            </div>
-                            <div class="permission-item">
-                                <div class="permission-icon"></div>
-                                <span>staffId (link to registered Staff)</span>
-                            </div>
-                            <div class="permission-item">
-                                <div class="permission-icon"></div>
-                                <span>departmentId, roleId, supervisorId</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="step-title">Add Supervisor</div>
+                    <div class="step-description">Admin assigns a supervisor to the user. Links user to their reporting
+                        manager via supervisorId.</div>
                     <div class="step-tags">
-                        <span class="tag tag-primary">/admin/users</span>
+                        <span class="tag tag-primary">supervisorId</span>
                     </div>
                 </div>
 
@@ -619,19 +644,9 @@
 
                 <div class="flow-step highlight-step">
                     <div class="step-number">5</div>
-                    <div class="step-title">Assign Department</div>
-                    <div class="step-description">Assign user to Department (or Wing/Section). Links User to organizational unit for file routing & visibility.</div>
-                    <div class="step-tags">
-                        <span class="tag tag-primary">departmentId</span>
-                    </div>
-                </div>
-
-                <div class="flow-arrow">↓</div>
-
-                <div class="flow-step highlight-step">
-                    <div class="step-number">6</div>
                     <div class="step-title">Assign Role</div>
-                    <div class="step-description">Assign Role with level (charge authority). Role includes RolePermission + RolePermissionGroup.</div>
+                    <div class="step-description">Admin assigns role. Role determines base permissions for official
+                        work.</div>
                     <div class="step-tags">
                         <span class="tag tag-purple">/admin/roles</span>
                     </div>
@@ -640,12 +655,42 @@
                 <div class="flow-arrow">↓</div>
 
                 <div class="flow-step highlight-step">
-                    <div class="step-number">7</div>
-                    <div class="step-title">Assign Permissions (Optional)</div>
-                    <div class="step-description">Add UserPermission or UserPermissionGroup for extra access beyond role. CASL: create, read, update, delete, manage.</div>
+                    <div class="step-number">6</div>
+                    <div class="step-title">Assign Permissions</div>
+                    <div class="step-description">Admin assigns permissions. User performs official work through this
+                        account based on role and permissions.</div>
                     <div class="step-tags">
                         <span class="tag">/admin/permissions</span>
                         <span class="tag">/admin/permission-groups</span>
+                    </div>
+                </div>
+
+                <div class="flow-arrow">↓</div>
+
+                <div class="flow-step highlight-step">
+                    <div class="step-number">7</div>
+                    <div class="step-title">Create Official Account</div>
+                    <div class="step-description">Admin creates official account linked to the user. Assigns username,
+                        department, designation.</div>
+                    <div class="expandable">
+                        <div class="expandable-header">📋 Official Account Fields</div>
+                        <div class="expandable-content">
+                            <div class="permission-item">
+                                <div class="permission-icon"></div>
+                                <span>Username (for official login)</span>
+                            </div>
+                            <div class="permission-item">
+                                <div class="permission-icon"></div>
+                                <span>officeEmail, designation</span>
+                            </div>
+                            <div class="permission-item">
+                                <div class="permission-icon"></div>
+                                <span>departmentId, staffId (link to personal)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-tags">
+                        <span class="tag tag-primary">/admin/users</span>
                     </div>
                 </div>
             </div>
@@ -658,43 +703,49 @@
                 </div>
 
                 <div class="flow-step" style="margin-top: 60px;">
-                    <div class="step-title">👤 Staff Self-Registration</div>
-                    <div class="step-description">Person submits form → POST /staff → Staff record created. CNIC unique check. No User yet.</div>
+                    <div class="step-title">👤 Personal Account Registration</div>
+                    <div class="step-description">User registers with CNIC → POST /staff → Personal account (Staff)
+                        created. CNIC unique check.</div>
                 </div>
 
                 <div class="flow-arrow">↓</div>
 
                 <div class="flow-step">
-                    <div class="step-title">📋 Admin Selects Staff</div>
-                    <div class="step-description">GET /staff returns registered Staff. Admin picks one. staffId passed to User creation.</div>
+                    <div class="step-title">📋 Admin Selects User</div>
+                    <div class="step-description">GET /staff returns users with personal accounts. Admin selects one to
+                        grant official account.</div>
                 </div>
 
                 <div class="flow-arrow">↓</div>
 
                 <div class="flow-step">
-                    <div class="step-title">🔗 Create User (staffId)</div>
-                    <div class="step-description">POST /admin/users with staffId. AdminUsersService links User.staffId → Staff. Password hashed with bcrypt.</div>
+                    <div class="step-title">🔗 Create Official Account (User)</div>
+                    <div class="step-description">POST /admin/users with staffId. Admin provides username, role,
+                        permissions. Links User (official) → Staff (personal).</div>
                 </div>
 
                 <div class="flow-arrow">↓</div>
 
                 <div class="flow-step">
                     <div class="step-title">🏛️ Department + Role + Permissions</div>
-                    <div class="step-description">User gets departmentId, roleId. Optional: permissionIds, permissionGroupIds. AdminCommonService extracts merged permissions.</div>
+                    <div class="step-description">Official account gets departmentId, roleId, permissionIds.
+                        AdminCommonService extracts merged permissions.</div>
                 </div>
 
                 <div class="flow-arrow">↓</div>
 
                 <div class="flow-step highlight-step">
                     <div class="step-title">🔐 CASL Ability Builder</div>
-                    <div class="step-description">createAbility(user, permissions). Role + UserPermission + UserPermissionGroup → final access. ProtectedRoute enforces.</div>
+                    <div class="step-description">createAbility(user, permissions). Role + UserPermission → access for
+                        official work. ProtectedRoute enforces.</div>
                 </div>
 
                 <div class="flow-arrow">↓</div>
 
                 <div class="flow-step">
                     <div class="step-title">📝 UserHistory & Audit</div>
-                    <div class="step-description">DbLogger records: created, staff_assigned, role_changed, department_changed, activated.</div>
+                    <div class="step-description">DbLogger records: created, staff_assigned, role_changed,
+                        department_changed.</div>
                 </div>
             </div>
         </div>
@@ -718,7 +769,8 @@
         <!-- Info Cards -->
         <div class="info-grid">
             <div class="info-card">
-                <div class="info-card-icon" style="background: linear-gradient(135deg, #3b82f6, #1e40af); color: white;">📁</div>
+                <div class="info-card-icon"
+                    style="background: linear-gradient(135deg, #3b82f6, #1e40af); color: white;">📁</div>
                 <div class="info-card-title">Admin API Routes</div>
                 <div class="info-card-desc">NestJS Admin module endpoints</div>
                 <ul class="info-card-list">
@@ -730,7 +782,8 @@
             </div>
 
             <div class="info-card">
-                <div class="info-card-icon" style="background: linear-gradient(135deg, #7c3aed, #5b21b6); color: white;">🔐</div>
+                <div class="info-card-icon"
+                    style="background: linear-gradient(135deg, #7c3aed, #5b21b6); color: white;">🔐</div>
                 <div class="info-card-title">CASL Permission Model</div>
                 <div class="info-card-desc">Actions: create, read, update, delete, manage</div>
                 <ul class="info-card-list">
@@ -742,19 +795,20 @@
             </div>
 
             <div class="info-card">
-                <div class="info-card-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a); color: white;">👤</div>
-                <div class="info-card-title">Flow: Staff First, Then User</div>
-                <div class="info-card-desc">Person self-registers → Admin creates User</div>
+                <div class="info-card-icon"
+                    style="background: linear-gradient(135deg, #22c55e, #16a34a); color: white;">👤</div>
+                <div class="info-card-title">Personal vs Official Account</div>
+                <div class="info-card-desc">Two account types in the flow</div>
                 <ul class="info-card-list">
-                    <li>1. Person registers as Staff (credentials set at registration)</li>
-                    <li>2. Admin selects Staff, creates User</li>
-                    <li>3. Admin assigns department, role, permissions</li>
-                    <li>4. Staff logs in with credentials from registration</li>
+                    <li><strong>Personal:</strong> Self-register via CNIC, update own info</li>
+                    <li><strong>Official:</strong> Admin creates with username, role, permissions</li>
+                    <li>User performs official work through official account</li>
                 </ul>
             </div>
 
             <div class="info-card">
-                <div class="info-card-icon" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white;">📊</div>
+                <div class="info-card-icon"
+                    style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white;">📊</div>
                 <div class="info-card-title">Frontend Routes</div>
                 <div class="info-card-desc">Daftar Management Admin /admin</div>
                 <ul class="info-card-list">
@@ -770,7 +824,8 @@
             <div class="legend-title">📖 Visual Legend</div>
             <div class="legend-grid">
                 <div class="legend-item">
-                    <div class="legend-color" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); border: 2px solid #22c55e;"></div>
+                    <div class="legend-color"
+                        style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); border: 2px solid #22c55e;"></div>
                     <div class="legend-label">Entry Point</div>
                 </div>
                 <div class="legend-item">
@@ -778,15 +833,18 @@
                     <div class="legend-label">Standard Process</div>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff); border: 2px solid #7c3aed;"></div>
+                    <div class="legend-color"
+                        style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff); border: 2px solid #7c3aed;"></div>
                     <div class="legend-label">Key Feature</div>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: linear-gradient(135deg, #fff7ed, #ffedd5); border: 2px solid #f97316;"></div>
+                    <div class="legend-color"
+                        style="background: linear-gradient(135deg, #fff7ed, #ffedd5); border: 2px solid #f97316;"></div>
                     <div class="legend-label">Decision / Validation</div>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color" style="background: linear-gradient(135deg, #cffafe, #a5f3fc); border: 2px solid #0891b2;"></div>
+                    <div class="legend-color"
+                        style="background: linear-gradient(135deg, #cffafe, #a5f3fc); border: 2px solid #0891b2;"></div>
                     <div class="legend-label">End Point</div>
                 </div>
                 <div class="legend-item">
@@ -799,7 +857,7 @@
 
     <script>
         document.querySelectorAll('.expandable-header').forEach(header => {
-            header.addEventListener('click', function() {
+            header.addEventListener('click', function () {
                 const content = this.nextElementSibling;
                 const isExpanded = content.style.display === 'block';
                 content.style.display = isExpanded ? 'none' : 'block';
@@ -810,8 +868,8 @@
         });
 
         document.querySelectorAll('.flow-step').forEach(step => {
-            step.addEventListener('mouseenter', function() { this.style.zIndex = '10'; });
-            step.addEventListener('mouseleave', function() { this.style.zIndex = '1'; });
+            step.addEventListener('mouseenter', function () { this.style.zIndex = '10'; });
+            step.addEventListener('mouseleave', function () { this.style.zIndex = '1'; });
         });
 
         document.querySelectorAll('.step-number').forEach(num => {
@@ -819,4 +877,5 @@
         });
     </script>
 </body>
+
 </html>
