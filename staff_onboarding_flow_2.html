@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Onboarding Process Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .step-content:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .step-title {
+            font-size: 1.5em;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .actor {
+            display: inline-block;
+            background: #edf2f7;
+            color: #4a5568;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .actor.admin {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .actor.staff {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .details {
+            margin-top: 15px;
+        }
+
+        .detail-section {
+            margin-bottom: 12px;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+
+        .detail-items {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-items li {
+            padding: 6px 0 6px 25px;
+            position: relative;
+            color: #718096;
+        }
+
+        .detail-items li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .status-badge.pending {
+            background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+        }
+
+        .status-badge.active {
+            background: linear-gradient(135deg, #68d391 0%, #48bb78 100%);
+        }
+
+        .connector {
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            margin-left: 38px;
+            opacity: 0.3;
+        }
+
+        .system-note {
+            background: #bee3f8;
+            border-left: 4px solid #3182ce;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            color: #2c5282;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .step {
+                grid-template-columns: 60px 1fr;
+                gap: 15px;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4em;
+            }
+
+            .connector {
+                margin-left: 28px;
+            }
+        }
+
+        .toolbar {
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="index.html" class="back-link">← Back to Hub</a>
+    </div>
+    <div class="container">
+        <h1>📋 Staff Onboarding Process</h1>
+        
+        <div class="flow-container">
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Staff Creation</div>
+                    <span class="actor admin">👤 Department Admin</span>
+                    
+                    <div class="details">
+                        <div class="detail-section">
+                            <div class="detail-label">System Actions:</div>
+                            <ul class="detail-items">
+                                <li>Stores staff data</li>
+                                <li>Sends OTP via SMS/email</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <span class="status-badge pending">Status: OTP Login Pending</span>
+                </div>
+            </div>
+            
+            <div class="connector"></div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Staff First Login</div>
+                    <span class="actor staff">👤 Staff Member</span>
+                    
+                    <div class="details">
+                        <div class="detail-section">
+                            <div class="detail-label">Staff Actions:</div>
+                            <ul class="detail-items">
+                                <li>Opens login screen</li>
+                                <li>Enters CNIC number</li>
+                                <li>Enters OTP</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="system-note">
+                            🔒 System verifies OTP and allows login
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="connector"></div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Credential Creation</div>
+                    <span class="actor staff">👤 Staff Member</span>
+                    
+                    <div class="details">
+                        <div class="detail-section">
+                            <div class="detail-label">System Forces Setup:</div>
+                            <ul class="detail-items">
+                                <li>Create Password</li>
+                                <li>Create PIN</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <span class="status-badge pending">Status: Profile Pending</span>
+                </div>
+            </div>
+            
+            <div class="connector"></div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">Profile Completion</div>
+                    <span class="actor staff">👤 Staff Member</span>
+                    
+                    <div class="details">
+                        <div class="detail-section">
+                            <div class="detail-label">Staff Uploads:</div>
+                            <ul class="detail-items">
+                                <li>CNIC image</li>
+                                <li>Profile picture</li>
+                                <li>Address</li>
+                                <li>Personal details</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="system-note">
+                            ✓ System verifies CNIC matches record
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="connector"></div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <div class="step-title">Biometric Verification</div>
+                    <span class="actor staff">👤 Staff Member</span>
+                    <span class="actor admin">👤 Department Admin</span>
+                    
+                    <div class="details">
+                        <div class="detail-section">
+                            <div class="detail-label">Process:</div>
+                            <ul class="detail-items">
+                                <li>Staff goes for biometric verification</li>
+                                <li>Dept Admin verifies biometrics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <span class="status-badge active">Status: Account Activated ✓</span>
+                </div>
+            </div>
+            
+            <div class="connector"></div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <div class="step-title">Dashboard Access</div>
+                    <span class="actor staff">👤 Staff Member</span>
+                    
+                    <div class="details">
+                        <div class="system-note">
+                            🎉 Staff can now log in normally and access full dashboard
+                        </div>
+                    </div>
+                    
+                    <span class="status-badge active">Onboarding Complete!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

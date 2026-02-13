@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Registration Workflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+        }
+
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .step-number {
+            min-width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .step-actor {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .details {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .details li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .mandatory {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .arrow {
+            text-align: center;
+            color: #667eea;
+            font-size: 2em;
+            margin: -10px 0;
+        }
+
+        .process-flow {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .process-box {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: #667eea;
+            font-weight: 500;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .step {
+                padding: 15px;
+            }
+
+            .step-title {
+                font-size: 1.2em;
+            }
+
+            .process-box {
+                min-width: 100%;
+            }
+        }
+
+        .toolbar {
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="index.html" class="back-link">← Back to Hub</a>
+    </div>
+    <div class="container">
+        <h1>📋 Staff Registration & Activation Workflow</h1>
+        
+        <div class="workflow">
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-actor">👤 DEPARTMENT ADMIN</div>
+                    <div class="step-title">Staff Creation</div>
+                    <div class="step-description">
+                        Admin creates staff account with basic information
+                    </div>
+                    <div class="details">
+                        <strong>Admin enters:</strong>
+                        <ul>
+                            <li>CNIC (National ID)</li>
+                            <li>Full Name</li>
+                            <li>Email address</li>
+                            <li>Phone number</li>
+                            <li>Basic information</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
+                            <strong>System Status:</strong> Pending Activation<br>
+                            <strong>System Action:</strong> Sends activation email link to staff
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 2 -->
+            <div class="step highlight">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF</div>
+                    <div class="step-title">Open Activation Link</div>
+                    <div class="step-description">
+                        Staff receives email and clicks activation link
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li>Staff checks email inbox</li>
+                            <li>Opens activation email</li>
+                            <li>Clicks activation link</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #e7f3ff; border-left: 4px solid #667eea; border-radius: 5px;">
+                            <strong>System Action:</strong> Opens onboarding screen
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF + 🖥️ SYSTEM</div>
+                    <div class="step-title">CNIC Upload & Verification</div>
+                    <div class="step-description">
+                        Identity verification through CNIC document
+                    </div>
+                    <div class="process-flow">
+                        <div class="process-box">📸 Upload CNIC Front</div>
+                        <div class="process-box">🔍 OCR Extraction</div>
+                        <div class="process-box">✅ Match with Database</div>
+                    </div>
+                    <div style="margin-top: 15px; padding: 10px; background: #ffe0e0; border-left: 4px solid #e74c3c; border-radius: 5px;">
+                        <strong>⚠️ Critical:</strong> If CNIC mismatch detected → Process stops
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF + 🖥️ SYSTEM</div>
+                    <div class="step-title">Phone Verification</div>
+                    <div class="step-description">
+                        Two-factor authentication via mobile number
+                    </div>
+                    <div class="details">
+                        <strong>Staff Action:</strong>
+                        <ul>
+                            <li>Enters mobile number</li>
+                        </ul>
+                        <strong>System Action:</strong>
+                        <ul>
+                            <li>Sends OTP to phone</li>
+                        </ul>
+                        <strong>Staff Action:</strong>
+                        <ul>
+                            <li>Enters received OTP</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #e7f3ff; border-left: 4px solid #667eea; border-radius: 5px;">
+                            <strong>System Action:</strong> Verifies phone number
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 5 -->
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF</div>
+                    <div class="step-title">Credential Setup</div>
+                    <div class="step-description">
+                        Staff creates login credentials
+                    </div>
+                    <div class="details">
+                        <strong>Staff creates:</strong>
+                        <ul>
+                            <li>Login password</li>
+                            <li>PIN code</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
+                            <strong>System Status:</strong> Profile Setup Pending
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 6 -->
+            <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF</div>
+                    <div class="step-title">Profile Completion</div>
+                    <div class="step-description">
+                        Staff adds additional profile information
+                    </div>
+                    <div class="details">
+                        <strong>Staff adds:</strong>
+                        <ul>
+                            <li>Profile photo</li>
+                            <li>Complete address</li>
+                            <li>Father's name</li>
+                            <li>Grade/Position</li>
+                            <li>Appointment date</li>
+                            <li>Other required details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 7 -->
+            <div class="step highlight">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF + 👤 ADMIN</div>
+                    <div class="step-title">Biometric Verification</div>
+                    <div class="step-description">
+                        <strong>Physical verification required</strong> - Staff visits biometric desk
+                    </div>
+                    <div class="details">
+                        <strong>Process:</strong>
+                        <ul>
+                            <li>Staff visits biometric verification desk</li>
+                            <li>Department Admin performs biometric verification</li>
+                            <li>Fingerprint/facial recognition captured</li>
+                        </ul>
+                        <div style="margin-top: 15px; padding: 10px; background: #d4edda; border-left: 4px solid #28a745; border-radius: 5px;">
+                            <strong>✓ System Status:</strong> Account Activated
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">↓</div>
+
+            <!-- Step 8 -->
+            <div class="step success">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <div class="step-actor">👨‍💼 STAFF</div>
+                    <div class="step-title">Dashboard Access</div>
+                    <div class="step-description">
+                        Staff can now log in and access the system normally
+                    </div>
+                    <div class="details">
+                        <ul>
+                            <li>Use registered email/username</li>
+                            <li>Enter created password</li>
+                            <li>Access full dashboard features</li>
+                            <li>Begin regular system usage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrow">✓</div>
+
+            <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); border-radius: 15px; color: white; font-size: 1.5em; font-weight: bold;">
+                🎉 Onboarding Complete - Staff Account Fully Activated
+            </div>
+        </div>
+    </div>
+</body>
+</html>

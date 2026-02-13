@@ -1,0 +1,176 @@
+<svg viewBox="0 0 1400 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5568d3;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#65408a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowA" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#667eea" />
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#764ba2" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1400" height="1200" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="700" y="50" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#333">
+    Authentication Flow Comparison
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="700" y="85" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#666">
+    Detailed Visual Process Diagram
+  </text>
+  
+  <!-- Divider -->
+  <line x1="700" y1="120" x2="700" y2="1150" stroke="#ddd" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- Flow A Header -->
+  <rect x="50" y="130" width="600" height="80" rx="15" fill="url(#gradA)" filter="url(#shadow)"/>
+  <text x="350" y="165" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="white">
+    Flow A
+  </text>
+  <text x="350" y="195" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    Link &amp; CNIC First (Security Priority)
+  </text>
+  
+  <!-- Flow B Header -->
+  <rect x="750" y="130" width="600" height="80" rx="15" fill="url(#gradB)" filter="url(#shadow)"/>
+  <text x="1050" y="165" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="white">
+    Flow B
+  </text>
+  <text x="1050" y="195" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white">
+    OTP Login First (UX Priority)
+  </text>
+  
+  <!-- Flow A Steps -->
+  <!-- Step 1 -->
+  <rect x="100" y="260" width="500" height="100" rx="12" fill="white" stroke="#667eea" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="140" cy="310" r="25" fill="#667eea"/>
+  <text x="140" y="318" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">1</text>
+  <text x="190" y="300" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">📧 Open Email Link</text>
+  <text x="190" y="330" font-family="Arial, sans-serif" font-size="14" fill="#666">User receives email and clicks verification link</text>
+  
+  <!-- Arrow -->
+  <line x1="350" y1="360" x2="350" y2="400" stroke="#667eea" stroke-width="3" marker-end="url(#arrowA)"/>
+  
+  <!-- Step 2 -->
+  <rect x="100" y="410" width="500" height="100" rx="12" fill="white" stroke="#667eea" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="140" cy="460" r="25" fill="#667eea"/>
+  <text x="140" y="468" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">2</text>
+  <text x="190" y="450" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">📄 Upload CNIC Document</text>
+  <text x="190" y="480" font-family="Arial, sans-serif" font-size="14" fill="#666">User uploads identity document for verification</text>
+  
+  <!-- Arrow -->
+  <line x1="350" y1="510" x2="350" y2="550" stroke="#667eea" stroke-width="3" marker-end="url(#arrowA)"/>
+  
+  <!-- Step 3 -->
+  <rect x="100" y="560" width="500" height="100" rx="12" fill="white" stroke="#667eea" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="140" cy="610" r="25" fill="#667eea"/>
+  <text x="140" y="618" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">3</text>
+  <text x="190" y="600" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">🔍 CNIC Verification</text>
+  <text x="190" y="630" font-family="Arial, sans-serif" font-size="14" fill="#666">System validates identity document</text>
+  
+  <!-- Arrow -->
+  <line x1="350" y1="660" x2="350" y2="700" stroke="#667eea" stroke-width="3" marker-end="url(#arrowA)"/>
+  
+  <!-- Step 4 -->
+  <rect x="100" y="710" width="500" height="100" rx="12" fill="white" stroke="#667eea" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="140" cy="760" r="25" fill="#667eea"/>
+  <text x="140" y="768" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">4</text>
+  <text x="190" y="750" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">📱 Receive OTP</text>
+  <text x="190" y="780" font-family="Arial, sans-serif" font-size="14" fill="#666">System sends one-time password</text>
+  
+  <!-- Arrow -->
+  <line x1="350" y1="810" x2="350" y2="850" stroke="#667eea" stroke-width="3" marker-end="url(#arrowA)"/>
+  
+  <!-- Step 5 -->
+  <rect x="100" y="860" width="500" height="100" rx="12" fill="#667eea" stroke="#667eea" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="140" cy="910" r="25" fill="white"/>
+  <text x="140" y="918" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#667eea">5</text>
+  <text x="190" y="900" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">✅ Enter OTP &amp; Login</text>
+  <text x="190" y="930" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">User enters OTP and gains access</text>
+  
+  <!-- Flow B Steps -->
+  <!-- Step 1 -->
+  <rect x="800" y="260" width="500" height="100" rx="12" fill="white" stroke="#764ba2" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="840" cy="310" r="25" fill="#764ba2"/>
+  <text x="840" y="318" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">1</text>
+  <text x="890" y="300" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">🖥️ Access Login Screen</text>
+  <text x="890" y="330" font-family="Arial, sans-serif" font-size="14" fill="#666">User navigates directly to login page</text>
+  
+  <!-- Arrow -->
+  <line x1="1050" y1="360" x2="1050" y2="400" stroke="#764ba2" stroke-width="3" marker-end="url(#arrowB)"/>
+  
+  <!-- Step 2 -->
+  <rect x="800" y="410" width="500" height="100" rx="12" fill="white" stroke="#764ba2" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="840" cy="460" r="25" fill="#764ba2"/>
+  <text x="840" y="468" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">2</text>
+  <text x="890" y="450" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">🔢 Enter CNIC Number</text>
+  <text x="890" y="480" font-family="Arial, sans-serif" font-size="14" fill="#666">User types in their CNIC identifier</text>
+  
+  <!-- Arrow -->
+  <line x1="1050" y1="510" x2="1050" y2="550" stroke="#764ba2" stroke-width="3" marker-end="url(#arrowB)"/>
+  
+  <!-- Step 3 -->
+  <rect x="800" y="560" width="500" height="100" rx="12" fill="white" stroke="#764ba2" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="840" cy="610" r="25" fill="#764ba2"/>
+  <text x="840" y="618" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">3</text>
+  <text x="890" y="600" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">📱 Receive &amp; Enter OTP</text>
+  <text x="890" y="630" font-family="Arial, sans-serif" font-size="14" fill="#666">Get OTP via SMS and enter code</text>
+  
+  <!-- Arrow -->
+  <line x1="1050" y1="660" x2="1050" y2="700" stroke="#764ba2" stroke-width="3" marker-end="url(#arrowB)"/>
+  
+  <!-- Step 4 -->
+  <rect x="800" y="710" width="500" height="100" rx="12" fill="#764ba2" stroke="#764ba2" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="840" cy="760" r="25" fill="white"/>
+  <text x="840" y="768" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#764ba2">4</text>
+  <text x="890" y="750" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">✅ Login to Account</text>
+  <text x="890" y="780" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">User gains immediate access</text>
+  
+  <!-- Arrow -->
+  <line x1="1050" y1="810" x2="1050" y2="850" stroke="#764ba2" stroke-width="3" marker-end="url(#arrowB)"/>
+  
+  <!-- Step 5 -->
+  <rect x="800" y="860" width="500" height="100" rx="12" fill="white" stroke="#764ba2" stroke-width="3" filter="url(#shadow)"/>
+  <circle cx="840" cy="910" r="25" fill="#764ba2"/>
+  <text x="840" y="918" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="white">5</text>
+  <text x="890" y="900" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">📄 Upload CNIC Later</text>
+  <text x="890" y="930" font-family="Arial, sans-serif" font-size="14" fill="#666">Complete verification post-login</text>
+  
+  <!-- Key Metrics Comparison at Bottom -->
+  <rect x="50" y="1010" width="300" height="130" rx="10" fill="#667eea" opacity="0.1" stroke="#667eea" stroke-width="2"/>
+  <text x="200" y="1040" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#667eea">Flow A Advantages</text>
+  <text x="70" y="1065" font-family="Arial, sans-serif" font-size="13" fill="#333">✓ Very Strong Security</text>
+  <text x="70" y="1090" font-family="Arial, sans-serif" font-size="13" fill="#333">✓ Excellent Compliance</text>
+  <text x="70" y="1115" font-family="Arial, sans-serif" font-size="13" fill="#333">✓ Early Verification</text>
+  
+  <rect x="1050" y="1010" width="300" height="130" rx="10" fill="#764ba2" opacity="0.1" stroke="#764ba2" stroke-width="2"/>
+  <text x="1200" y="1040" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#764ba2">Flow B Advantages</text>
+  <text x="1070" y="1065" font-family="Arial, sans-serif" font-size="13" fill="#333">✓ Faster Login</text>
+  <text x="1070" y="1090" font-family="Arial, sans-serif" font-size="13" fill="#333">✓ Lower User Friction</text>
+  <text x="1070" y="1115" font-family="Arial, sans-serif" font-size="13" fill="#333">✓ Better UX</text>
+  
+  <!-- Time comparison -->
+  <rect x="400" y="1010" width="600" height="60" rx="10" fill="white" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="1035" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">⏱️ Time to Access</text>
+  <text x="500" y="1055" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#667eea" font-weight="bold">Flow A: Slower</text>
+  <text x="900" y="1055" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#764ba2" font-weight="bold">Flow B: Faster</text>
+  
+  <!-- Security comparison -->
+  <rect x="400" y="1080" width="600" height="60" rx="10" fill="white" stroke="#333" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="1105" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333">🔒 Initial Security</text>
+  <text x="500" y="1125" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#667eea" font-weight="bold">Flow A: Very Strong</text>
+  <text x="900" y="1125" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#764ba2" font-weight="bold">Flow B: Strong</text>
+</svg>

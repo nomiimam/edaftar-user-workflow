@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Daftar - Auth Flow Diagram</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 40%, #7c3aed 100%);
+            min-height: 100vh;
+            padding: 24px;
+        }
+        .toolbar {
+            max-width: 1400px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .back-link:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .diagram-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: auto;
+        }
+        .diagram-wrap img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="index.html" class="back-link">← Back to Hub</a>
+    </div>
+    <div class="diagram-wrap">
+        <img src="auth-flow-diagram.svg" alt="Authentication Flow Comparison - Detailed Visual Process Diagram" />
+    </div>
+</body>
+</html>
